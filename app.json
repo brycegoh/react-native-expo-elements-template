@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "rn-template",
-    "slug": "rn-template",
+    "name": "rename-test",
+    "slug": "rename-test",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",

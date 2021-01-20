@@ -12,6 +12,13 @@
 # Install dep
 `npm install`
 
+# Rename App
+In `app.js`
+```
+"name": "rename this",
+"slug": "rename this",
+```
+
 # Run local
 ```
 npm run start
