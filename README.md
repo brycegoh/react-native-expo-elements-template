@@ -8,6 +8,8 @@
 
 [expo firebase docs](https://docs.expo.io/guides/using-firebase/?redirected)
 
+[firestore docs](https://firebase.google.com/docs/firestore)
+
 
 # Install dep
 `npm install`
