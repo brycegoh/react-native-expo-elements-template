@@ -1,4 +1,4 @@
-# react native with expo template
+# react native with expo + firebase template
 
 [react native docs](https://reactnative.dev/docs/environment-setup)
 
