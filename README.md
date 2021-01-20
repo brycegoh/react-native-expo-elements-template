@@ -5,3 +5,7 @@
 [expo docs](https://docs.expo.io/workflow/expo-cli/)
 
 [react native elements](https://reactnativeelements.com/docs/overview)
+
+[expo firebase docu](https://docs.expo.io/guides/using-firebase/?redirected)
+
+[web sdk firebase docu]()
