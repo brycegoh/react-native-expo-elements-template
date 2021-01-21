@@ -1,52 +1,36 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
-import { Button, ThemeProvider } from 'react-native-elements';
+import {View} from 'react-native'
 
-// firebase setup
+// css
+import {customStyles} from './layoutStyle';
+
+// components
+import {
+  Home,
+  ScreenOne
+} from './components/index.js';
+
+// react native elements
+import { Button, ThemeProvider, Text } from 'react-native-elements';
+
+// react navigation
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+const Stack = createStackNavigator();
+
+// firebase firestore
 import firebaseConfig from './firebase'
 import * as firebase from 'firebase'
 import 'firebase/firestore';
 
-firebase.initializeApp(firebaseConfig);
-const store = firebase.firestore();
-
-
-// firebase test
-const triggerSet = () => {
-  store.collection("characters").doc("mario").set({
-    employment: "plumber",
-    outfitColor: "red",
-    specialAttack: "fireball"
-  })
-  return
-}
-
-const triggerGet = async () => {
-  const snapshot = await store.collection("characters").doc("mario").get()
-  const data = snapshot.data()
-  console.log( data.employment )
-  return
-}
-
 export default function App() {
 
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!!</Text>
-      <StatusBar style="auto" />
-      <ThemeProvider>
-      <Button title="hello" onPress={triggerGet} />
-    </ThemeProvider>
-    </View>
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Home" >
+          <Stack.Screen name="Home" component={Home} />
+          <Stack.Screen name="ScreenOne" component={ScreenOne} />
+        </Stack.Navigator>
+      </NavigationContainer>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

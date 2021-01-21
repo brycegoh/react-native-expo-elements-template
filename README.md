@@ -10,6 +10,8 @@
 
 [firestore docs](https://firebase.google.com/docs/firestore)
 
+[react navigation docs](https://reactnavigation.org/docs/hello-react-navigation)
+
 
 # Install dep
 `npm install`
@@ -28,4 +30,28 @@ npm run ios
 npm run android
 ```
 
+# Firebase firestore
+```js
+firebase.initializeApp(firebaseConfig);
+const store = firebase.firestore();
 
+const triggerSet = () => {
+  store.collection("characters").doc("mario").set({
+    employment: "plumber",
+    outfitColor: "red",
+    specialAttack: "fireball"
+  })
+  return
+}
+
+const triggerGet = async () => {
+  const snapshot = await store.collection("characters").doc("mario").get()
+  const data = snapshot.data()
+  console.log( data.employment )
+  return
+}
+```
+# React Navigation
+```js
+    onPress={() => navigation.navigate('Details')} // go to Details component
+```
